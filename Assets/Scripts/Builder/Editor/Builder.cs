@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public static class Builder
 {
-    private const string BUILDS_FOLDER= "D:\\SAVVY CLI";
 
     static string[] scenes = new string[]
     {
@@ -15,14 +14,16 @@ public static class Builder
         "Assets/Scenes/Level3.unity"
     };
 
-    [MenuItem("Builder/Build Android")]
     static void BuildAndroid()
     {
-        BuildPipeline.BuildPlayer(scenes, $@".\Builds\Android\Game.apk", BuildTarget.Android,BuildOptions.None);
+        BuildPipeline.BuildPlayer(scenes, @".\Builds\Android\Game.apk", BuildTarget.Android,BuildOptions.None);
     }
     static void BuildWindows()
     {
-        BuildPipeline.BuildPlayer(scenes, @"C:\Users\Abdulaziz\OneDrive\Desktop\JenkinsFiles\Windows\Game.exe", BuildTarget.StandaloneWindows64, BuildOptions.None);
-
+        BuildPipeline.BuildPlayer(scenes, @".\Builds\Game.exe", BuildTarget.StandaloneWindows64, BuildOptions.None);
+    }
+    static void BuildIOS()
+    {
+        BuildPipeline.BuildPlayer(scenes, @".\Builds\IOS\", BuildTarget.iOS, BuildOptions.None);
     }
 }
