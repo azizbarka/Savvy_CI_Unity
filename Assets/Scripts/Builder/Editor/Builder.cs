@@ -15,10 +15,10 @@ public static class Builder
         "Assets/Scenes/Level3.unity"
     };
 
-
+    [MenuItem("Builder/Build Android")]
     static void BuildAndroid()
     {
-        BuildPipeline.BuildPlayer(scenes, $@"C:\Users\Abdulaziz\OneDrive\Desktop\JenkinsFiles\Android\FILE.Apk", BuildTarget.Android,BuildOptions.None);
+        BuildPipeline.BuildPlayer(scenes, $@".\Builds\Android\Game.apk", BuildTarget.Android,BuildOptions.None);
     }
     static void BuildWindows()
     {
